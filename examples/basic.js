@@ -8,5 +8,7 @@ require ('../') ({
   console.log('Executing!');
 }, function onDisconnected () {
   // Executes when connection is dropped
+  // tessel-wifi will automatically try to reconnect
+  // and will then run the onConnected function if successful
   console.log('Execution halted.');
 });
