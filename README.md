@@ -3,6 +3,8 @@ tessel-wifi
 
 Layer on Tessel's wifi that automatically connects and reconnects when dropped.
 
+**Edit: Whoops, look like Jia already did this. Check it out [here](https://www.npmjs.com/package/tessel-wifi).**
+
 ## Installation
 
 ```sh
