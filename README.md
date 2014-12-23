@@ -22,6 +22,8 @@ require ('tessel-wifi') ({
   console.log('I got connected!');
 }, function onDisconnected () {
   // Executes when connection is dropped
+  // tessel-wifi will automatically try to reconnect
+  // and will then run the onConnected function if successful
   console.log('Connection dropped :( Trying to reconnect');
 });
 ```
