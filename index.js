@@ -48,11 +48,11 @@ function tw (settings, onConnected, onDisconnected) {
               console.log('Timed out', self.timeouts, 'times in a row. Are you sure the network and password are correct?');
             }
           }
-          if (self.debug) {
-            console.log('Finished connecting.');
-          }
+          self.checkConnection();
         }
-        self.checkConnection();
+        if (self.debug) {
+          console.log('Finished executing connection callback.');
+        }
       });
     }
   };
