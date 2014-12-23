@@ -1,0 +1,28 @@
+{
+  "name": "tessel-wifi",
+  "version": "1.0.0",
+  "description": "Layer on Tessel's wifi that automatically connects and reconnects when dropped",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Frijol/tessel-wifi.git"
+  },
+  "keywords": [
+    "tessel",
+    "wifi",
+    "automatic"
+  ],
+  "author": "Kelsey Breseman",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/Frijol/tessel-wifi/issues"
+  },
+  "hardware" :
+  {
+    "./examples" : false
+  },
+  "homepage": "https://github.com/Frijol/tessel-wifi"
+}
