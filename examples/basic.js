@@ -1,9 +1,8 @@
 require ('../') ({
-  ssid: "BRINELY",
-  password: "Brinely2011",
-  timeout: 40,
-  port: 8000,
-  debug: true
+  ssid: "BRINELY", // network
+  password: "Brinely2011", // password
+  timeout: 40, // seconds
+  debug: true // show debug messages
 }, function onConnected () {
   // Executes every time connection is gained
   console.log('Executing!');

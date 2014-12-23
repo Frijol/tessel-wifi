@@ -8,7 +8,6 @@ function tw (settings, onConnected, onDisconnected) {
     security: settings.security || null,
     timeout: settings.timeout || null
   };
-  self.port = settings.port || 8000;
   self.connected = false;
   self.debug = settings.debug || false;
   self.onConnected = onConnected || null;
@@ -45,11 +44,13 @@ function tw (settings, onConnected, onDisconnected) {
           }
           if (err.indexOf('timed out') > -1) {
             self.timeouts ++;
-            if(self.debug) {
+            if(self.debug && (self.timeouts > 1)) {
               console.log('Timed out', self.timeouts, 'times in a row. Are you sure the network and password are correct?');
             }
           }
-          console.log('Finished connecting.');
+          if (self.debug) {
+            console.log('Finished connecting.');
+          }
         }
         self.checkConnection();
       });
@@ -64,6 +65,7 @@ function tw (settings, onConnected, onDisconnected) {
     if (self.debug) {
       console.log('Connected.');
     }
+    self.timeouts = 0;
     self.checkConnection();
   });
 
@@ -83,8 +85,5 @@ function tw (settings, onConnected, onDisconnected) {
     self.checkConnection();
   });
 }
-
-// Keep alive
-process.ref();
 
 module.exports = tw;
